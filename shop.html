@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - GlowZoneCare</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic layout for the product cards */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product h3 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        .product p {
+            color: #666;
+            font-size: 1rem;
+        }
+        .product-buttons button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .product-buttons button:hover {
+            background-color: #4cae4c;
+        }
+        .shop-controls {
+            text-align: center;
+            margin: 20px;
+        }
+        .filter {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">GlowZoneCare</div>
+        
+        <div class="nav-icons">
+            <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></a>
+            <a href="cart.html" class="icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            <a href="account.html" class="icon"><i class="fas fa-user"></i></a>
+        </div>
+    </nav>
+</header>
+
+<!-- Back to Shop Button -->
+<a class="backToHomePage" href="index.html">← Back to Shop</a>
+
+<!-- Sorting and Filtering Controls -->
+<div class="shop-controls">
+    <select id="category-filter" class="filter">
+        <option value="all">All Products</option>
+        <option value="cleanser">Cleanser</option>
+        <option value="moisturizer">Moisturizer</option>
+        <option value="serum">Serum</option>
+    </select>
+
+    <select id="price-sort" class="filter">
+        <option value="default">Sort by Price</option>
+        <option value="asc">Low to High</option>
+        <option value="desc">High to Low</option>
+    </select>
+</div>
+
+<h1>Shop Our Skincare Collection</h1>
+
+<main>
+    <div id="product-list" class="product-list">
+        <!-- Sample Products (30 skincare products) -->
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=Facial+Cleanser" alt="Facial Cleanser">
+            <h3>Facial Cleanser</h3>
+            <p>Deep cleanses and hydrates skin.</p>
+            <div class="product-buttons">
+                <button class="add-to-wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=Moisturizer" alt="Moisturizer">
+            <h3>Moisturizer</h3>
+            <p>Hydrates skin and locks in moisture.</p>
+            <div class="product-buttons">
+                <button class="add-to-wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=Anti-Aging+Serum" alt="Anti-Aging Serum">
+            <h3>Anti-Aging Serum</h3>
+            <p>Reduces wrinkles and fine lines.</p>
+            <div class="product-buttons">
+                <button class="add-to-wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=Face+Mask" alt="Face Mask">
+            <h3>Face Mask</h3>
+            <p>Deep cleanses and detoxifies skin.</p>
+            <div class="product-buttons">
+                <button class="add-to-wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <!-- Repeat for more products as necessary -->
+    </div>
+</main>
+
+
+
+</body>
+<footer>
+    <div class="footer-bottom">
+        <p>&copy; 2025 GlowZoneCare. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/shop.js"></script>
+</html>

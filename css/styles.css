@@ -1,0 +1,519 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap");
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff7f9;
+  color: #333;
+}
+
+/* Header & Navigation */
+header {
+  background: #ffd7e2;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+/* Sticky Navbar */
+header.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hide navbar links on small screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+.hero-content a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  color: #b83a6d;
+}
+/* Product Animations */
+.product {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.product.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  color: #b83a6d;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #b83a6d;
+  font-weight: 600;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #b83a6d;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.nav-icons ~ .icon {
+  color: red;
+}
+
+.nav-icons .icon {
+  font-size: 1.5em;
+  color: #333;
+  transition: color 0.3s, transform 0.2s ease;
+  position: relative;
+}
+
+.nav-icons .icon:hover {
+  color: #b83a6d;
+  transform: scale(1.1);
+}
+
+/* Cart Badge */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: #b83a6d;
+  color: white;
+  font-size: 0.8em;
+  padding: 3px 7px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a:hover {
+  background: #b83a6d;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  background: url("https://i.imgur.com/7fN5LQI.jpg") no-repeat center
+    center/cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-family: "Playfair Display", serif;
+}
+
+/* .hero p {
+  font-size: 18px;
+  margin: 10px 0;
+} */
+
+.product button {
+  display: inline-block;
+  background: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+/* About Section Styling */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  background-color: #f9f9f9;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.2em;
+  color: white;
+  padding-bottom: 15%;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  color: white;
+  line-height: 1.6;
+  font-family: "Playfair Display", serif; /* Elegant serif font */
+}
+
+/* .about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+#about {
+  position: relative;
+  background: url("https://s14354.pcdn.co/wp-content/uploads/2021/06/jess-harper-sunday-3E0njpQbSbM-unsplash.jpg")
+    no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Add a dark overlay for better text readability */
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity for better effect */
+  z-index: 1;
+}
+
+/* Ensure text is above overlay */
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  font-size: 2.5em;
+  font-family: "Playfair Display", serif; /* A more elegant font */
+}
+
+.about-content p {
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+/* Products */
+.products {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+}
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust spacing */
+  justify-content: center;
+}
+
+.product {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.product p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Buttons container */
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Common Button Styling */
+.product .btn {
+  flex: 1;
+  background-color: #b83a6d;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.product .btn:hover {
+  background-color: #cd853f;
+}
+/* Wishlist Styles */
+#wishlist-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.wishlist-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.wishlist-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.wishlist-info h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.remove-wishlist {
+  background: #b83a6d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove-wishlist:hover {
+  background: darkred;
+}
+
+/* Wishlist Button Styling */
+.wishlist-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  position: absolute;
+  background: #b83a6d;
+
+  top: 10px;
+  right: 10px;
+  font-size: 5px;
+  cursor: pointer;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.2);
+}
+.contact {
+  margin-top: 20%;
+  position: relative;
+  margin: 10%;
+  padding: 80px 20px;
+  width: 80%;
+  background: url("https://i.pinimg.com/736x/72/99/35/729935005ccfe0e55f6f04eeca4184b5.jpg")
+    no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact h2 {
+  font-size: 36px;
+  color: #b83a6d;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #b83a6d;
+
+  border-radius: 5px;
+}
+
+.contact textarea {
+  height: 100px;
+}
+
+.contact button {
+  width: 50%;
+  padding: 2%;
+  background-color: #b83a6d;
+  border: 2px solid #b83a6d;
+  color: white;
+  align-content: center;
+  margin-bottom: 20%;
+}
+
+/* Footer */
+footer {
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  color: #b83a6d;
+  font-weight: bold;
+}
+
+.wishlist-btn,
+.cart-btn,
+.buy-now-btn {
+  display: block;
+  margin: 5px 0;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* Custom Alert Box */
+.custom-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Different alert colors */
+.custom-alert.warning {
+  background: #ffc107;
+  color: black;
+}
+
+.custom-alert.error {
+  background: #dc3545;
+}
+
+/* Animation for smooth appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

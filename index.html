@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowZoneCare</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/account.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>/* Header & Navigation */
+    header {
+      background: #ffd7e2;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    section{
+        margin: 2%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    /* Sticky Navbar */
+    header.sticky {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(255, 215, 226, 0.95); /* Ensures it's visible */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Fix nav visibility */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 15px 30px;
+      background: #ffd7e2; /* Make sure it matches */
+      z-index: 1001; /* Ensure it stays on top */
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    
+    .nav-links li a {
+      text-decoration: none;
+      color: #b83a6d;
+      font-weight: 600;
+      padding: 8px 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links li a:hover {
+      background: #b83a6d;
+      color: white;
+      border-radius: 5px;
+    }
+    
+    /* Mobile Hamburger Menu */
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .nav-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .nav-icons .icon {
+      font-size: 1.5em;
+      color: #333;
+      transition: color 0.3s, transform 0.2s ease;
+      position: relative;
+    }
+    
+    .nav-icons .icon:hover {
+      color: #b83a6d;
+      transform: scale(1.1);
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background: #b83a6d;
+      color: white;
+      font-size: 0.8em;
+      padding: 3px 7px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+    
+    /* Ensure header is not hidden */
+    body {
+      padding-top: 80px; /* Matches header height */
+    }
+.hero-content{
+    background: rgba(255, 215, 226, 0.95); /* Ensures it's visible */
+
+}
+.hero{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+    footer {
+width: 100%;
+position: relative;
+bottom: 0%;
+  background: #ffd7e2;
+  text-align: center;
+  padding: 10px;
+  color: #b83a6d;
+  font-weight: bold;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  width: 22%;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #b83a6d;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #b83a6d;
+}
+
+.social-icons img {
+  width: 30px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom a {
+  color: #b83a6d;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">GlowZoneCare</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="icon"><i class="fas fa-shopping-cart"></i><span
+                        class="cart-count">0</span></a>
+                <a href="account.html" class="icon"><i class="fas fa-user"></i></a>
+            </div>
+            <span id="user-name"></span>
+
+        </nav>
+    </header>
+
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Luxury Skincare Products</h1>
+            <p>Revitalize your skin with our premium skincare range.</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>At GlowZoneCare, we believe in the power of nature and science working together to bring you the
+                    best skincare solutions. Our products are carefully formulated with natural ingredients and
+                    dermatologist-approved formulas to ensure that your skin gets the care it deserves.</p>
+                <p>From hydrating moisturizers to anti-aging serums, we craft each product to enhance your natural
+                    beauty while keeping your skin healthy and radiant. Your skin deserves the best, and we are here to
+                    provide it!</p>
+            </div>
+    </section>
+
+
+    <section id="products" class="products">
+        <h2>Our Skincare Products</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSZeCHtcy-w3_lcUKUulAmP_cqKgEg-M3i5rrwvQJ_J4C8CFesCRAnVJRoBCCvZdXDmu6dx-Y_93qVxByZTg-lgkFXoCDiqpWgZJ_mpM2c5ez8YFdkdEuZa"
+                    alt="Facial Cleanser">
+                <h3>Facial Cleanser</h3>
+                <p>Deep cleanses and hydrates skin.</p>
+                <div class="product-buttons">
+                    <button class="add-to-wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images-static.nykaa.com/media/catalog/product/2/d/2d429e8THEDE00000344_1.jpg?tr=w-500"
+                    alt="Moisturizer">
+                <h3>Hydrating Moisturizer</h3>
+                <p>Provides 24-hour hydration.</p>
+                <div class="product-buttons">
+                    <button class="add-to-wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/51wERqBeGLL._AC_UF1000,1000_QL80_.jpg"
+                    alt="Vitamin C Serum">
+                <h3>Vitamin C Serum</h3>
+                <p>Brightens and evens skin tone.</p>
+                <div class="product-buttons">
+                    <button class="add-to-wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://www.dotandkey.com/cdn/shop/files/vitcsun80_6d354c0c-118e-4763-b38a-e0666f185414.jpg?v=1727354539"
+                    alt="Sunscreen">
+                <h3>SPF 50 Sunscreen</h3>
+                <p>Protects from UV rays.</p>
+                <div class="product-buttons">
+                    <button class="wishlist"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSZeCHtcy-w3_lcUKUulAmP_cqKgEg-M3i5rrwvQJ_J4C8CFesCRAnVJRoBCCvZdXDmu6dx-Y_93qVxByZTg-lgkFXoCDiqpWgZJ_mpM2c5ez8YFdkdEuZa"
+                    alt="Facial Cleanser">
+                <h3>Facial Cleanser</h3>
+                <p>Deep cleanses and hydrates skin.</p>
+                <div class="product-buttons">
+                    <button class="wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images-static.nykaa.com/media/catalog/product/2/d/2d429e8THEDE00000344_1.jpg?tr=w-500"
+                    alt="Moisturizer">
+                <h3>Hydrating Moisturizer</h3>
+                <p>Provides 24-hour hydration.</p>
+                <div class="product-buttons">
+                    <button class="wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/51wERqBeGLL._AC_UF1000,1000_QL80_.jpg"
+                    alt="Vitamin C Serum">
+                <h3>Vitamin C Serum</h3>
+                <p>Brightens and evens skin tone.</p>
+                <div class="product-buttons">
+                    <button class="wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://www.dotandkey.com/cdn/shop/files/vitcsun80_6d354c0c-118e-4763-b38a-e0666f185414.jpg?v=1727354539"
+                    alt="Sunscreen">
+                <h3>SPF 50 Sunscreen</h3>
+                <p>Protects from UV rays.</p>
+                <div class="product-buttons">
+                    <button class="wishlist" onclick="addToWishlist(this)"><i class="fas fa-heart"></i></button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+
+      </div>      
+
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="send-email.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+</body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>GlowZoneCare is your go-to destination for premium skincare, makeup, and beauty essentials. Explore a
+                    wide range of dermatologist-approved products tailored to your needs.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">Skincare</a></li>
+                    <li><a href="#">Makeup</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="icons/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="icons/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>  
+        <div class="footer-bottom">
+            <p>&copy; 2025 GlowZoneCare. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/account.js"></script>
+
+</html>

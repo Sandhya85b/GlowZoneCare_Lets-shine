@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - GlowZoneCare Beauty</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GlowZoneCare</div>
+            <ul class="nav-links">
+                <a class="backToHomePage" href="index.html">Home</a>
+               
+            </ul>
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="icon" id="account-icon"><i class="fas fa-user"></i></a>
+                <button id="logout-btn" style="display: none;">Logout</button>
+            </div>
+        </nav>
+    </header>
+<main>
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+
+        <!-- Cart Controls -->
+        <div class="cart-controls">
+            <select id="filterCategory">
+                <option value="all">All Categories</option>
+                <option value="skincare">Skincare</option>
+                <option value="makeup">Makeup</option>
+                <option value="haircare">Haircare</option>
+            </select>
+
+            <select id="sortPrice">
+                <option value="default">Sort by Price</option>
+                <option value="lowToHigh">Low to High</option>
+                <option value="highToLow">High to Low</option>
+            </select>
+
+           
+        </div>
+
+        <!-- Cart Items -->
+        <div class="cart-items" id="cart-items"></div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <h3>Total: $<span id="cart-total">0.00</span></h3>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+</main>
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GlowZoneCare. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
