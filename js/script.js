@@ -266,3 +266,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+const API_URL = "http://localhost:5000/api";
+
+// Fetch products
+fetch(`${API_URL}/products`)
+    .then(res => res.json())
+    .then(products => {
+        const productList = document.getElementById("product-container");
+        products.forEach(product => {
+            const productCard = document.createElement("div");
+            productCard.innerHTML = `
+                <h2>${product.name}</h2>
+                <p>Price: $${product.price}</p>
+                <button onclick="addToWishlist('${product._id}')">Add to Wishlist</button>
+                <button onclick="addToCart('${product._id}')">Add to Cart</button>
+            `;
+            productList.appendChild(productCard);
+        });
+    });
+
+function addToWishlist(productId) {
+    fetch(`${API_URL}/wishlist/add`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productId })
+    }).then(() => alert("Added to wishlist"));
+}
+
+function addToCart(productId) {
+    fetch(`${API_URL}/cart/add`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productId })
+    }).then(() => alert("Added to cart"));
+}
