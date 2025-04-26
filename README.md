@@ -26,7 +26,7 @@ Welcome to **GlowZoneCare**, your ultimate destination for premium skincare prod
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/GlowZoneCare.git
+git clone https://github.com/Sandhya85b/GlowZoneCare_Lets-shine
 cd GlowZoneCare
 ```
 
@@ -39,9 +39,9 @@ yarn install # For frontend
 ### 3️⃣ Set Up Environment Variables
 Create a `.env` file in the backend directory and add:
 ```
-MONGO_URI=your_mongo_database_url
-JWT_SECRET=your_secret_key
-STRIPE_KEY=your_stripe_api_key
+MONGO_URI
+JWT_SECRET
+
 ```
 
 ### 4️⃣ Start the Application
@@ -58,7 +58,7 @@ yarn dev
 ---
 
 ## 🌎 Live Demo
-🔗 **[GlowZoneCare Live]([https://your-live-demo-link.com/](https://sandhya85b.github.io/GlowZoneCare_Lets-shine/))**
+🔗 **[GlowZoneCare Live]([https://sandhya85b.github.io/GlowZoneCare_Lets-shine/)**
 
 ---
 
@@ -67,10 +67,7 @@ yarn dev
 
 ---
 
-## 📜 License
-This project is **MIT Licensed**. Feel free to use and improve it! 🎉
 
----
 
 💖 **Thank you for visiting GlowZoneCare! Happy Shopping! 🛍️✨**
 
